@@ -1,0 +1,300 @@
+:root {
+    --template-beige: #f5f2e8;
+    --template-gold: #D4A574;
+    --template-button: #c49b3e;
+    --template-dark: #2f2f2f;
+    --template-muted: #666;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--template-beige);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--template-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Styles - Matching Template */
+.navbar {
+    background-color: var(--template-beige) !important;
+    padding: 1rem 0;
+    box-shadow: none;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: var(--template-dark) !important;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar-brand:hover {
+    color: var(--template-gold) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--template-dark) !important;
+    font-weight: 400;
+    margin: 0 1.5rem;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--template-gold) !important;
+}
+
+.dharma-wheel {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(73%) sepia(30%) saturate(1000%) hue-rotate(359deg) brightness(90%) contrast(90%);
+}
+
+/* Hero Section - Exactly Like Template */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    min-height: 600px;
+    background: url('assets/center-image.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* NO overlay - template shows clear image */
+.hero-section::before {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding-left: 8%;
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    line-height: 1.1;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-shadow: none;
+    letter-spacing: -0.02em;
+}
+
+.btn-about {
+    background-color: var(--template-button);
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    border-radius: 25px;
+    color: white;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+}
+
+.btn-about:hover {
+    background-color: #b08934;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section - Matching Template Cards */
+.features-section {
+    padding: 5rem 0;
+    background-color: var(--template-beige);
+}
+
+.features-section .container {
+    max-width: 1100px;
+}
+
+.feature-card {
+    background-color: white;
+    border: none;
+    text-align: center;
+    padding: 3rem 2rem;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    /* Golden bronze color matching template */
+    filter: brightness(0) saturate(100%) invert(73%) sepia(45%) saturate(1200%) hue-rotate(359deg) brightness(85%) contrast(90%);
+}
+
+.feature-card h3 {
+    color: var(--template-dark);
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.3;
+}
+
+.feature-card p {
+    color: var(--template-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.btn-calendar {
+    background-color: transparent;
+    border: none;
+    color: var(--template-button);
+    padding: 8px 0;
+    margin-top: 1rem;
+    font-weight: 400;
+    text-decoration: underline;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.btn-calendar:hover {
+    color: #8b6914;
+    text-decoration: none;
+}
+
+/* Footer - Matching Template */
+.footer {
+    background-color: var(--template-beige);
+    padding: 2.5rem 0 2rem 0;
+    position: relative;
+}
+
+.decorative-border {
+    height: 30px;
+    background-image: url('assets/bottom-decoration.svg');
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: auto 100%;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+    filter: brightness(0) saturate(100%) invert(73%) sepia(30%) saturate(1000%) hue-rotate(359deg) brightness(90%) contrast(90%);
+}
+
+.footer-content {
+    text-align: center;
+    color: var(--template-muted);
+}
+
+.footer-content p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content a {
+    color: var(--template-muted);
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: var(--template-button);
+}
+
+/* Responsive Design - Template Matching */
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+        padding: 0 5%;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section {
+        height: 60vh;
+        min-height: 500px;
+    }
+
+    .feature-card {
+        margin-bottom: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .features-section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn-about {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+/* Remove animations that might interfere with template matching */
+.feature-card {
+    animation: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}

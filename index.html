@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wat Pah Na Kae">
+
+    <title>Wat Pah Na Kae - Buddhist Monastery</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Custom CSS - Updated to match template -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/dharma-wheel.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/dharma-wheel.svg">
+    <link rel="apple-touch-icon" href="assets/dharma-wheel.svg">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/center-image.png" as="image">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Wat Pah Na Kae - Buddhist Monastery">
+    <meta property="og:description"
+        content="A peaceful Buddhist monastery offering meditation, workshops, and spiritual guidance.">
+    <meta property="og:image" content="assets/center-image.png">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable btn btn-primary">Skip to main content</a>
+
+    <!-- Navigation - Exactly like template -->
+    <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Wat Pah Na Kae Home">
+                <img src="assets/dharma-wheel.svg" alt="Dharma Wheel" class="dharma-wheel me-2">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#about" role="menuitem">About</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#schedule" role="menuitem">Schedule</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#practice" role="menuitem">Study & Practice</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="#gallery" role="menuitem">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section - Matching Template Exactly -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="container-fluid">
+                <div class="hero-content">
+                    <h1 id="hero-title">Wat Pah<br>Na Kae</h1>
+                    <button class="btn btn-about" type="button" aria-describedby="about-description">
+                        About us
+                    </button>
+                    <div id="about-description" class="visually-hidden">
+                        Learn more about our Buddhist monastery community
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section - Matching Template Cards -->
+        <section class="features-section" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="visually-hidden">Our Community and Services</h2>
+
+                <div class="row justify-content-center">
+                    <!-- Our Sangha -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="feature-card h-100">
+                            <div class="feature-icon" aria-hidden="true">
+                                <img src="assets/buddha.svg" alt="Buddha meditation icon">
+                            </div>
+                            <h3>Our Sangha</h3>
+                            <p>Learn more about our community of monastics and lay practitioners.</p>
+                        </article>
+                    </div>
+
+                    <!-- Meditation & Workshops -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="feature-card h-100">
+                            <div class="feature-icon" aria-hidden="true">
+                                <img src="assets/flower-decoration.svg" alt="Lotus flower icon">
+                            </div>
+                            <h3>Meditation<br>& Workshops</h3>
+                            <p>Discover our meditation practices and upcoming workshops.</p>
+                        </article>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <article class="feature-card h-100">
+                            <div class="feature-icon" aria-hidden="true">
+                                <img src="assets/bell-01.svg" alt="Temple bell icon">
+                            </div>
+                            <h3>Upcoming<br>Events</h3>
+                            <p></p>
+                            <button class="btn btn-calendar" type="button" aria-label="View events calendar">
+                                View Calendar
+                            </button>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Matching Template -->
+    <footer class="footer" role="contentinfo">
+        <div class="decorative-border" aria-hidden="true"></div>
+        <div class="container">
+            <div class="footer-content">
+                <address class="mb-0">
+                    <p>1234 Dharma Rd., Cityville, ST 12345 · <a href="tel:+11234567890"
+                            aria-label="Call monastery">(123) 456-7890</a></p>
+                    <p><a href="mailto:info@monastery.org" aria-label="Email monastery">info@monastery.org</a></p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Minimal JavaScript for smooth scrolling -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
