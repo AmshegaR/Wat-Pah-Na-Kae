@@ -1,274 +1,247 @@
+/* CSS Custom Variables */
 :root {
-    --template-beige: #f5f2e8;
-    --template-gold: #D4A574;
-    --template-button: #c49b3e;
-    --template-dark: #2f2f2f;
-    --template-muted: #666;
+    --primary-golden: #D4A574;
+    --button-bg-golden: #D4A574;
+    --light-bg: #F5F0E6;
+    --body-bg: #F5F0E6;
+    --dark-text: #3C2E26;
+    --hero-title-color: #2F2F2F;
+    --footer-bg: #F5F0E6;
+    --footer-text: #3C2E26;
+    --white-text: #FFFFFF;
+    --hero-overlay-color: rgba(245, 240, 230, 0.3);
+
+    /* Fonts */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans-serif: 'Open Sans', sans-serif;
 }
 
 /* Base Styles */
 body {
-    background-color: var(--template-beige);
-    font-family: 'Georgia', 'Times New Roman', serif;
-    line-height: 1.6;
-    color: var(--template-dark);
     margin: 0;
     padding: 0;
+    font-family: var(--font-sans-serif);
+    color: var(--dark-text);
+    background-color: var(--body-bg);
 }
 
-/* Navigation Styles - Matching Template */
+/* Header/Navigation Styles */
 .navbar {
-    background-color: var(--template-beige) !important;
-    padding: 1rem 0;
+    background-color: var(--body-bg) !important;
+    height: 150px;
+    padding: 0 5%;
     box-shadow: none;
-    position: relative;
-    z-index: 1000;
+    border-bottom: none;
 }
 
 .navbar-brand {
-    color: var(--template-dark) !important;
-    font-weight: 400;
-    font-size: 1.1rem;
-    font-family: 'Arial', sans-serif;
-}
-
-.navbar-brand:hover {
-    color: var(--template-gold) !important;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-nav .nav-link {
-    color: var(--template-dark) !important;
-    font-weight: 400;
-    margin: 0 1.5rem;
-    font-size: 1rem;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-sans-serif);
+    font-size: 2rem;
+    color: var(--dark-text) !important;
+    margin-left: 30px;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--template-gold) !important;
+    color: var(--primary-golden) !important;
 }
 
-.dharma-wheel {
-    width: 32px;
-    height: 32px;
-    filter: brightness(0) saturate(100%) invert(73%) sepia(30%) saturate(1000%) hue-rotate(359deg) brightness(90%) contrast(90%);
-}
-
-/* Hero Section - Exactly Like Template */
-.hero-section {
-    position: relative;
-    height: 70vh;
-    min-height: 600px;
-    background: url('assets/center-image.png');
-    background-size: cover;
+/* Hero Section */
+#hero-section {
+    background-image: url('assets/center-image.png');
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    min-height: 130vh;
+    position: relative;
+    background-color: var(--body-bg);
 }
 
-/* NO overlay - template shows clear image */
-.hero-section::before {
+.hero-overlay {
     display: none;
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+    top: 100px;
+    left: 100px;
     z-index: 2;
     text-align: left;
-    padding-left: 8%;
-    max-width: 50%;
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
-    font-weight: 400;
-    margin-bottom: 2.5rem;
-    color: #1a1a1a;
+    font-family: var(--font-serif);
+    font-size: 8rem !important;
+    color: var(--hero-title-color);
+    margin-bottom: 30px;
     line-height: 1.1;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    text-shadow: none;
-    letter-spacing: -0.02em;
+    font-weight: 700;
 }
 
-.btn-about {
-    background-color: var(--template-button);
-    border: none;
+.about-btn {
+    background-color: var(--button-bg-golden);
+    color: #000000;
+    font-family: var(--font-sans-serif);
+    font-size: 3rem;
     padding: 15px 35px;
-    font-size: 1rem;
-    border-radius: 25px;
-    color: white;
-    font-weight: 400;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    font-family: 'Arial', sans-serif;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: 70px;
+    margin-top: 240px;
+    display: inline-block;
+    font-weight: 600;
 }
 
-.btn-about:hover {
-    background-color: #b08934;
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.about-btn:hover {
+    background-color: #C19660;
+    color: #000000;
 }
 
-/* Features Section - Matching Template Cards */
-.features-section {
-    padding: 5rem 0;
-    background-color: var(--template-beige);
+/* Content Sections (Three Cards) */
+#content-sections {
+    padding: 60px 0;
 }
 
-.features-section .container {
-    max-width: 1100px;
-}
-
-.feature-card {
-    background-color: white;
-    border: none;
+.content-card {
+    background-color: var(--body-bg);
+    padding: 40px 30px;
     text-align: center;
-    padding: 3rem 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.3s ease;
     height: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.feature-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.feature-icon img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    /* Golden bronze color matching template */
-    filter: brightness(0) saturate(100%) invert(73%) sepia(45%) saturate(1200%) hue-rotate(359deg) brightness(85%) contrast(90%);
-}
-
-.feature-card h3 {
-    color: var(--template-dark);
-    font-size: 1.75rem;
-    margin-bottom: 1.25rem;
-    font-weight: 400;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    line-height: 1.3;
-}
-
-.feature-card p {
-    color: var(--template-muted);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-family: 'Arial', sans-serif;
-}
-
-.btn-calendar {
-    background-color: transparent;
     border: none;
-    color: var(--template-button);
-    padding: 8px 0;
-    margin-top: 1rem;
-    font-weight: 400;
-    text-decoration: underline;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+    filter: sepia(100%) saturate(200%) hue-rotate(25deg) brightness(0.8);
+}
+
+.content-card h2 {
+    font-family: var(--font-sans-serif);
+    font-size: 1.6rem;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.content-card p {
+    font-family: var(--font-sans-serif);
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.calendar-btn {
+    background-color: transparent;
+    color: var(--primary-golden);
+    border: 2px solid var(--primary-golden);
+    font-family: var(--font-sans-serif);
     font-size: 1rem;
-    font-family: 'Arial', sans-serif;
-    transition: color 0.3s ease;
-}
-
-.btn-calendar:hover {
-    color: #8b6914;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-top: 20px;
     text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Footer - Matching Template */
-.footer {
-    background-color: var(--template-beige);
-    padding: 2.5rem 0 2rem 0;
-    position: relative;
+.calendar-btn:hover {
+    background-color: var(--primary-golden);
+    color: var(--white-text);
 }
 
-.decorative-border {
-    height: 30px;
+/* Golden Decorative Strip */
+#decorative-strip {
+    width: 100%;
+    height: 40px;
     background-image: url('assets/bottom-decoration.svg');
+    background-size: auto 40px;
     background-repeat: repeat-x;
+    margin-top: 40px;
+    margin-bottom: 0;
     background-position: center;
-    background-size: auto 100%;
-    margin-bottom: 2rem;
-    opacity: 0.7;
-    filter: brightness(0) saturate(100%) invert(73%) sepia(30%) saturate(1000%) hue-rotate(359deg) brightness(90%) contrast(90%);
+    border-top: 2px solid var(--primary-golden);
+    background-color: transparent;
 }
 
-.footer-content {
-    text-align: center;
-    color: var(--template-muted);
-}
-
-.footer-content p {
-    margin: 0.25rem 0;
-    font-size: 1rem;
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 30px 0;
+    text-align: left;
+    font-family: var(--font-sans-serif);
+    font-size: 0.9rem;
     line-height: 1.6;
-    font-family: 'Arial', sans-serif;
 }
 
-.footer-content a {
-    color: var(--template-muted);
+footer p {
+    margin: 0.25rem 0;
+}
+
+footer a {
+    color: var(--footer-text);
     text-decoration: none;
 }
 
-.footer-content a:hover {
-    color: var(--template-button);
+footer a:hover {
+    color: var(--primary-golden);
 }
 
-/* Responsive Design - Template Matching */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .hero-content {
-        text-align: center;
-        padding: 0 5%;
-        max-width: 100%;
-    }
-
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3rem !important;
     }
 
-    .hero-section {
-        height: 60vh;
-        min-height: 500px;
+    .hero-content {
+        text-align: left;
+        padding-left: 20px;
     }
 
-    .feature-card {
-        margin-bottom: 2rem;
-        padding: 2rem 1.5rem;
+    #hero-section {
+        min-height: 60vh;
     }
 
-    .features-section {
-        padding: 3rem 0;
+    .content-card {
+        margin-bottom: 30px;
+        padding: 30px 20px;
+    }
+
+    #content-sections {
+        padding: 40px 0;
     }
 }
 
 @media (max-width: 576px) {
     .hero-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
+        font-size: 2.8rem !important;
+        margin-bottom: 20px;
     }
 
-    .btn-about {
-        padding: 12px 28px;
-        font-size: 0.95rem;
+    .about-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-left: 20px;
     }
 
-    .feature-card h3 {
+    .content-card h2 {
         font-size: 1.5rem;
     }
 
@@ -276,25 +249,9 @@ body {
         margin: 0.5rem 0;
         text-align: center;
     }
-}
 
-/* Remove animations that might interfere with template matching */
-.feature-card {
-    animation: none;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    .navbar {
+        padding: 10px 5%;
+        height: auto;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-content {
-    animation: fadeInUp 1s ease-out;
 }
