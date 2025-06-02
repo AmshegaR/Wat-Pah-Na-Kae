@@ -2,7 +2,7 @@
 :root {
     --primary-golden: #D4A574;
     --button-bg-golden: #D4A574;
-    --light-bg: #F5F0E6;
+    --light-bg: #f5eee6;
     --body-bg: #F5F0E6;
     --dark-text: #3C2E26;
     --hero-title-color: #2F2F2F;
@@ -106,6 +106,62 @@ body {
     background-repeat: no-repeat;
     background-position: center bottom;
     background-color: var(--body-bg);
+    /* Vintage LUT-style filter for muted, pastel tones */
+    filter: blur(1px) saturate(0.55) brightness(1.15) contrast(0.8) hue-rotate(5deg);
+}
+
+/* Overall haze/vintage effect - muted green-gray and beige blend */
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Combination of primary blur color (muted green-gray) and secondary beige tones */
+    background: linear-gradient(
+        45deg,
+        rgba(168, 183, 165, 0.12) 0%,     /* Primary blur color #A8B7A5 */
+        rgba(211, 200, 180, 0.08) 50%,    /* Secondary beige #D3C8B4 */
+        rgba(168, 183, 165, 0.1) 100%     /* Back to muted green-gray */
+    );
+    z-index: 0;
+}
+
+/* Additional blur overlay for left content area */
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    /* Gradient overlay: Warm beige to cool grayish-green transition */
+    background: linear-gradient(to right,
+            rgba(232, 222, 209, 0.85) 0%,     /* Far left: Pale translucent beige #E8DED1 */
+            rgba(232, 222, 209, 0.65) 20%,    /* Warm beige continues */
+            rgba(220, 215, 200, 0.5) 40%,     /* Transition blend */
+            rgba(177, 192, 169, 0.4) 60%,     /* Muted grayish-green #B1C0A9 emerges */
+            rgba(177, 192, 169, 0.25) 80%,    /* Cool grayish-green continues */
+            rgba(177, 192, 169, 0.1) 90%,     /* Fading to center */
+            transparent 100%);                 /* Seamlessly integrates with blur */
+    /* Modern browsers with backdrop-filter support */
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(3px)) {
+    .hero-image-container::before {
+        background: linear-gradient(to right,
+                rgba(232, 222, 209, 0.9) 0%,      /* Enhanced beige for fallback */
+                rgba(232, 222, 209, 0.75) 20%,
+                rgba(220, 215, 200, 0.6) 40%,     /* Transition blend */
+                rgba(177, 192, 169, 0.5) 60%,     /* Grayish-green stronger */
+                rgba(177, 192, 169, 0.3) 80%,
+                rgba(177, 192, 169, 0.15) 90%,
+                transparent 100%);
+    }
 }
 
 .hero-image {
@@ -117,12 +173,13 @@ body {
     top: 0;
     left: 0;
     width: 30%;
-    /* Fixed width zone for content - exactly 30% as requested */
+    /* Fixed width zone for content - positioned in the blurred area */
     height: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    z-index: 2;
+    z-index: 3;
+    /* Ensure content appears above blur overlays */
 }
 
 .hero-content {
@@ -142,8 +199,11 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.1;
     font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* Slightly stronger shadow */
+    text-shadow:
+        3px 3px 8px rgba(0, 0, 0, 0.4),
+        1px 1px 3px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.3);
+    /* Enhanced shadow for better readability on blurred background */
 }
 
 .about-btn {
@@ -159,12 +219,18 @@ body {
     font-weight: 600;
     margin-top: 2rem;
     border: none;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        0 2px 8px rgba(212, 165, 116, 0.3);
 }
 
 .about-btn:hover {
     background-color: #C19660;
     color: #000000;
     transform: translateY(-2px);
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        0 3px 12px rgba(212, 165, 116, 0.4);
 }
 
 /* Content Sections (Three Cards) */
@@ -306,7 +372,11 @@ footer a:hover {
     }
 
     .hero-content-wrapper {
-        width: 40%;
+        width: 35%;
+    }
+
+    .hero-image-container::before {
+        width: 45%;
     }
 
     .hero-content {
@@ -335,7 +405,11 @@ footer a:hover {
     }
 
     .hero-content-wrapper {
-        width: 50%;
+        width: 45%;
+    }
+
+    .hero-image-container::before {
+        width: 55%;
     }
 
     .hero-content h1 {
@@ -376,7 +450,11 @@ footer a:hover {
     }
 
     .hero-content-wrapper {
-        width: 65%;
+        width: 60%;
+    }
+
+    .hero-image-container::before {
+        width: 70%;
     }
 
     .hero-content {
@@ -432,7 +510,11 @@ footer a:hover {
     }
 
     .hero-content-wrapper {
-        width: 75%;
+        width: 70%;
+    }
+
+    .hero-image-container::before {
+        width: 80%;
     }
 
     .hero-content h1 {
